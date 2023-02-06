@@ -1,0 +1,126 @@
+  body {
+    background-color: #4d4a53;
+    align-content: center;
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+  }
+
+  #root {
+    text-align: center;
+    font-family: 'Seven Segment', sans-serif;
+  }
+
+  .calculator {
+    background-color: #a7aea6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: fit-content;
+    padding: 120px 20px 20px 20px;
+    border-radius: 20px 20px 10px 10px;
+  }
+
+  .display {
+    display: flex;
+    width: 560px;
+    background-color: #0c0b11;
+    border-radius: 10px 10px 0 0;
+  }
+
+  @media (max-width:600px) {
+    .display {
+      width: 500px;
+    }
+  }
+
+  @media (max-width:420px) {
+    .display {
+      width: 380px;
+    }
+  }
+
+  .digit {
+    font-size: 80px;
+    width: 46px;
+    text-align: right;
+    letter-spacing: -10px;
+  }
+
+  @media (max-width:600px) {
+    .digit {
+      width: 40px;
+    }
+  }
+
+  @media (max-width:420px) {
+    .digit {
+      font-size: 55px;
+      width: 31px;
+      letter-spacing: -4px;
+    }
+  }
+
+  .digit-bgr {
+    position: absolute;
+  }
+
+  .digit-active {
+    color: red;
+  }
+
+  .digit-inactive {
+    color: rgba(255, 0, 0, 0.1);
+  }
+
+  .panel {
+    width: 560px;
+    background-color: #100f13;
+    padding-top: 20px;
+  }
+
+  @media (max-width:600px) {
+    .panel {
+      width: 500px;
+    }
+  }
+
+  @media (max-width:420px) {
+    .panel {
+      width: 380px;
+    }
+  }
+
+  .panel-row {
+    display: flex;
+    flex-direction: row;
+    margin: 0 10px;
+  }
+
+  .panel-button {
+    display: flex;
+    margin: 10px;
+  }
+
+  .panel-button button {
+    height: 100px;
+    font-size: 50px;
+    background-color: #bcd3e0;
+  }
+
+  @media (max-width:420px) {
+    .panel-button button {
+      height: 80px;
+      font-size: 40px;
+    }
+  }
+
+  .panel-sign {
+    background-color: #9ca89f !important;
+    border-color: #9ca89f;
+  }
+
+  .panel-special {
+    background-color: #c68b22 !important;
+    border-color: #c68b22;
+  }
