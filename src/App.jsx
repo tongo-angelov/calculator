@@ -96,7 +96,6 @@ const App = () => {
 
   useEffect(() => {
     window.addEventListener('keydown', (e) => {
-      // console.log('key: ', e.key);
       if (e.key.match(/^[0-9,\-,+,*,\/,.,!]$/) || e.key === 'Enter' || e.key === 'Backspace' || e.key === 'Delete')
         handleInput(e.key);
     });

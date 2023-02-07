@@ -17,9 +17,6 @@ const Display = ({ data, op }) => {
 
         display.reverse();
 
-        // if (data < 0)
-        //     display[1] = '-';
-
         if (op)
             display[0] = op;
     }
