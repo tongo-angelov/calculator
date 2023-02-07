@@ -36,8 +36,8 @@ const App = () => {
     }
     if (input === '!' || input === '+/-') {
       setData(data => {
-        const value = Number(data.display) * -1;
-        return ({ ...data, display: String(value), next: Number(value) });
+        const value = data.next * -1;
+        return ({ ...data, display: String(value), next: value });
       });
     }
     if (input === '+') {
