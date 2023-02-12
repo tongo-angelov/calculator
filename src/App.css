@@ -152,10 +152,17 @@
     background-color: #bcd3e0;
   }
 
-  @media (max-width:460px) {
+  @media (max-width:550px) {
     .panel-button button {
       height: 80px;
       font-size: 40px;
+    }
+  }
+
+  @media (max-width:460px) {
+    .panel-button button {
+      height: 60px;
+      font-size: 30px;
     }
   }
 

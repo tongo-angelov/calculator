@@ -36,8 +36,14 @@ const App = () => {
     }
     if (input === '!' || input === '+/-') {
       setData(data => {
-        const value = data.next * -1;
-        return ({ ...data, display: String(value), next: value });
+        if (data.operation === op.res) {
+          const value = Number(data.display) * -1;
+          return ({ ...data, display: String(value), next: value, operation: null });
+        }
+        else {
+          const value = data.next * -1;
+          return ({ ...data, display: String(value), next: value });
+        }
       });
     }
     if (input === '+') {
@@ -94,13 +100,15 @@ const App = () => {
     }
   };
 
+  const handler = (e) => {
+    if (e.key.match(/^[0-9,\-,+,*,\/,.,!]$/) || e.key === 'Enter' || e.key === 'Backspace' || e.key === 'Delete')
+      handleInput(e.key);
+  };
+
   useEffect(() => {
-    window.addEventListener('keydown', (e) => {
-      if (e.key.match(/^[0-9,\-,+,*,\/,.,!]$/) || e.key === 'Enter' || e.key === 'Backspace' || e.key === 'Delete')
-        handleInput(e.key);
-    });
+    window.addEventListener('keydown', handler);
     return () => {
-      window.removeEventListener('keydown', () => { console.log('REMOVE EVENT'); });
+      window.removeEventListener('keydown', handler);
     };
   }, []);
 
